@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,6 +15,7 @@ import java.util.List;
  */
 
 public abstract class AbstractCommand {
+    protected final static List<String> NO_TAB_COMPLETIONS = new ArrayList<>();
 
     /**
      * The implementation of the command.

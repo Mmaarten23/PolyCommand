@@ -39,7 +39,7 @@ public class CommandHandler implements TabExecutor {
                     "%prefix% &e[i] &7= Number";
     private boolean PRINT_HELP_WHEN_NOT_A_COMMAND = false;
     private int CMDS_PER_PAGE = 5;
-    protected final static List<String> NO_TAB_COMPLETIONS = new ArrayList<>();
+
 
     /**
      * Create a new {@code CommandHandler} instance.
