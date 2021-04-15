@@ -39,6 +39,7 @@ public class CommandHandler implements TabExecutor {
                     "%prefix% &e[i] &7= Number";
     private boolean PRINT_HELP_WHEN_NOT_A_COMMAND = false;
     private int CMDS_PER_PAGE = 5;
+    private final static List<String> NO_TAB_COMPLETIONS = new ArrayList<>();
 
     /**
      * Create a new {@code CommandHandler} instance.
@@ -316,9 +317,7 @@ public class CommandHandler implements TabExecutor {
     @Nullable
     @Override
     public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        System.out.println("TAB COMPLETE CALLED");
         if (args.length == 1) {
-            System.out.println("RETURNING ARGS FOR TABCOMPLETE");
             return commands.stream().map(command1 -> command1.getClass().getAnnotation(CommandInfo.class).name()).collect(Collectors.toList());
         }
         @Nullable AbstractCommand cmd = commands
