@@ -317,7 +317,7 @@ public class CommandHandler implements TabExecutor {
     @Override
     public List<String> onTabComplete(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
         System.out.println("TAB COMPLETE CALLED");
-        if (args.length == 0) {
+        if (args.length == 1) {
             System.out.println("RETURNING ARGS FOR TABCOMPLETE");
             return commands.stream().map(command1 -> command1.getClass().getAnnotation(CommandInfo.class).name()).collect(Collectors.toList());
         }
